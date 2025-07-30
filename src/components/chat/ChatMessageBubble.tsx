@@ -39,7 +39,11 @@ const ChatMessageBubble = ({
           role === "user" ? "bg-neutral-800 max-w-lg" : "max-w-xl"
         )}`}
       >
-        <span>{content}</span>
+        {isLoading && role === "assistant" ? (
+          <div className="animate-pulse text-muted-foreground">Loading...</div>
+        ) : (
+          <span>{content}</span>
+        )}
       </div>
     </div>
   );

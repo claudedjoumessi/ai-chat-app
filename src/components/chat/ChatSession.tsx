@@ -91,6 +91,7 @@ export default function ChatSession({ messages, onSend, isLoading }: ChatSession
                   key={index}
                   role={message.role}
                   content={message.content}
+                  isLoading = {isLoading ? index === messages.length - 1 : false}
                 />
               ))}
             </div>
