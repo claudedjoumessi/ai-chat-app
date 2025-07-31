@@ -39,7 +39,7 @@ app.post("/chat/stream", async (req, res) => {
 
   try {
     const stream = await groq.chat.completions.create({
-      model: "llama3-70b-8192",
+      model: llm_model,
       messages,
       temperature: llm_temperature,
       max_completion_tokens: llm_max_completion_tokens,
